@@ -5,6 +5,12 @@ const port = 7777
 const expressLayouts = require('express-ejs-layouts')
 app.use(expressLayouts);
 
+//extract styles and scripts from sub pages into layouts
+app.set('layout extractStyles', true);
+app.set('layout extractScripts', true);
+
+app.use(express.static('./assets'))
+
 //set the view engine
 app.set('view engine', 'ejs');
 app.set('views', './views');
