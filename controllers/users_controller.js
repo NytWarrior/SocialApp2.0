@@ -11,6 +11,10 @@ module.exports.profile = function (req, res) {
 
 //render the signup page
 module.exports.signUp = function (req, res) {
+
+    if (req.isAuthenticated()) {
+        return res.redirect('/users/profile');
+    }
     return res.render('user_signUp', {
         title: "Sign Up"
     })
@@ -18,6 +22,10 @@ module.exports.signUp = function (req, res) {
 
 //render the signin page
 module.exports.signIn = function (req, res) {
+
+    if (req.isAuthenticated()) {
+        return res.redirect('/users/profile');
+    }
     return res.render('user_signIn', {
         title: "Sign In"
     })
