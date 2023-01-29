@@ -1,0 +1,19 @@
+<li>
+    <p>
+        <%= comment.content %>
+            <% if(locals.user){ %>
+                <!-- TODO: to correct the authentication -->
+                <!-- the user who commented can delete the post -->
+                <!-- the user on whose post is commented can delete the comment -->
+                <%# if(locals.user && locals.user.id==comment.user.id){ %>
+                    <small>
+                        <a href="/comments/destroy/<%= comment.id %> ">Y</a>
+                    </small>
+                    <% } %>
+                        <br>
+                        <small>
+                            <!-- TODO: user name should be display along side its comment -->
+                            <%#= comment.user.name %>
+                        </small>
+    </p>
+</li>
