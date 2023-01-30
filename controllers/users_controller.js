@@ -67,13 +67,16 @@ module.exports.create = function (req, res) {
 }
 //sign in and create a session
 module.exports.createSession = function (req, res) {
+    req.flash('success', 'Logged in Successfully!!');
     return res.redirect('/');
 }
 
-module.exports.destroySession = function (req, res) {
-    // req.logOut();
-    // return res.redirect('/');
-    req.session.destroy(function (err) {
-        res.redirect('/'); //Inside a callback… bulletproof!
+module.exports.destroySession = function (req, res, next) {
+    req.logout(function (err) {
+        if (err) {
+            return next(err);
+        }
+        req.flash('success', 'Logged Out!!');
+        res.redirect('/');
     });
 }
