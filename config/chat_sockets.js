@@ -1,5 +1,11 @@
 module.exports.chatSockets = function (socketServer) {
-    let io = require('socket.io')(socketServer);
+    let io = require('socket.io')(socketServer, {
+        cors: {
+            //To Allow the Origin to be our Server
+            // origin: "*",
+            origin: "http://localhost:7777",
+        },
+    });
 
     io.sockets.on('connection', function (socket) {
         console.log('new connection received', socket.id);
