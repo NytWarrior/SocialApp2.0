@@ -5,9 +5,15 @@
     <section id="feed-posts">
         <h4>Posts</h4>
         <% if(locals.user){ %>
-            <form action="/posts/create" id="new-post-form" method="POST">
-                <textarea name="content" cols="30" rows="3" placeholder="Type here.."></textarea>
-                <input type="submit" value="Post">
+            <form action="/posts/create" id="new-post-form" method="post" enctype="multipart/form-data">
+                <textarea name="content" cols="30" rows="3" placeholder="Type Here..." required></textarea>
+
+                <input type="file" name="image" accept="image/png, image/gif, image/jpeg, image/jpg" size="1" />
+                <button>Add Image</button>
+
+                <input type="file" name="video" accept="video/mp4, video/webm, video/ogg, video/mkv" size="1" />
+                <button>Add Video</button>
+                <input type="submit" value="Post" />
             </form>
             <% } %>
                 <div id="posts-list-container">

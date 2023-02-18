@@ -5,11 +5,18 @@
 
         newPostForm.submit(function (e) {
             e.preventDefault();
-
+            const form = new FormData(newPostForm[0]);
             $.ajax({
-                type: 'post',
+                type: 'POST',
                 url: '/posts/create',
-                data: newPostForm.serialize(),
+                // data: newPostForm.serialize(),
+                // -----------------------------------
+                //**** Used with Multipart Form ****//
+                enctype: "multipart/form-data",
+                processData: false, // Important!
+                contentType: false, // Important!
+                cache: false,
+                data: form,
                 success: function (data) {
                     let newPost = newPostDom(data.data.post);
                     $('#posts-list-container>ul').prepend(newPost);
@@ -28,6 +35,7 @@
                         timeout: 1500
 
                     }).show();
+                    newPostForm.trigger("reset");
 
                 }, error: function (error) {
                     console.log(error.responseText);
@@ -39,18 +47,37 @@
 
     // method to create a post in DOM
     let newPostDom = function (post) {
+        let postImage, postVideo;
+        try {
+            if (post.image !== "") {
+                postImage = `<img src="${post.image}" alt="alt-post-image" />`;
+            } else {
+                postImage = "";
+            }
+
+            if (post.video !== "") {
+                postVideo = `<video src="${post.video}" alt="alt-post-video" controls />`;
+            } else {
+                postVideo = "";
+            }
+        } catch (error) {
+            console.log("error", error);
+        }
+
         return $(`<li id="post-${post._id}">
                     <p>
-                        
+                        ${post.content}
                         <small>
                             <a class="delete-post-button"  href="/posts/destroy/${post._id}">X</a>
                         </small>
                        
-                        ${post.content}
                         <br>
                         <small>
                         ${post.user.name}
                         </small>
+                        <br>
+                        ${postImage}
+			            ${postVideo}
                         <br>
                         <small>
                             
