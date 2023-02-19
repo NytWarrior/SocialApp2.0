@@ -1,3 +1,83 @@
-body{
-    background-color: aqua;
+body {
+    background-image: url('https://wallpapers.com/images/featured/blank-h9v8oske8iey8nkq.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    font-family: 'Numans', sans-serif;
+}
+
+
+.heading {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1%;
+    text-align: left;
+    box-shadow: 0px 0px 4px 0px #545b62;
+}
+
+
+.bio-info {
+    padding: 5%;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 4px 0px #b0b3b7;
+}
+
+
+.bio-image {
+    text-align: center;
+}
+
+.bio-image img {
+    border-radius: 50%;
+}
+
+.bio-content {
+    text-align: left;
+}
+
+.bio-content p {
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.input-group-prepend span {
+    width: 50px;
+    background-color: #FFC312;
+    color: black;
+    border: 0 !important;
+    height: 37.8px;
+    margin-top: 0.25rem;
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+input:focus {
+    outline: 0 0 0 0 !important;
+    box-shadow: 0 0 0 0 !important;
+
+}
+
+.form-control {
+    margin: 0.25rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.login_btn {
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+    float: right;
+    margin-top: 1rem;
+}
+
+.login_btn:hover {
+    color: black;
+    background-color: white;
 }
