@@ -1,17 +1,29 @@
 <% if (locals.user){ %>
-    <div id="user-chat-box">
-        <ul id="chat-messages-list">
-            <li class="other-message">
-                <span>Other Message</span>
-            </li>
-            <li class="self-message">
-                <span>Self Message</span>
-            </li>
-        </ul>
-        <div id="chat-message-input-container">
-            <input id="chat-message-input" placeholder="Type message here">
-            <button id="send-message">Send</button>
+    <div class="floating-chat">
+        <i class="fa fa-comments" aria-hidden="true"></i>
+        <div class="chat" id="user-chat-box">
+            <div class="header">
+                <span class="title">
+                    what's on your mind?
+                </span>
+                <button>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <ul class="messages" id="chat-messages-list">
+                <li class="other-message">
+                    <span>Other Message</span>
+                </li>
+                <li class="self-message">
+                    <span>Self Message</span>
+                </li>
+            </ul>
+            <div>
+                <div class="footer" id="chat-message-input-container">
+                    <input class="text-box" id="chat-message-input" placeholder="Type message here">
+                    <button id="send-message">Send</button>
+                </div>
+            </div>
         </div>
-
     </div>
     <% } %>
