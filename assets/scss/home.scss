@@ -12,14 +12,31 @@ body {
     display: flex;
 
     #feed-posts {
-        width: 70%;
+        width: 75%;
         padding: 10px;
     }
 
     #user-friends {
-        width: 30%;
+        width: 25%;
         padding: 10px;
-        border-left: 1px solid lightgray;
+        // border-left: 1px solid lightgray;
         height: 100%;
+        position: fixed;
+        // background-color: rgba(0, 0, 0, 0.5);
+        color: black;
+        margin-left: 75%;
+
+        .nav-item {
+            display: flex;
+            margin: 7px;
+
+            #friendImg {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-right: 10px;
+            }
+        }
     }
 }

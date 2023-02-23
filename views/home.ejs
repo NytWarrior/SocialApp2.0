@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/css/home.css">
 <link rel="stylesheet" href="/css/chat_box.css">
 
-<div class="container-fluid" id="home-container">
+<div class="" id="home-container">
     <section id="feed-posts">
         <h4>Posts</h4>
         <% if(locals.user){ %>
@@ -26,14 +26,24 @@
     </section>
 
     <section id="user-friends">
-        <h4>Friends</h4>
-        <% for(u of all_users){ %>
-            <p>
-                <a href="/users/profile/<%= u.id %>">
-                    <%= u.name %>
-                </a>
-            </p>
-            <% } %>
+
+        <div class="">
+            <h4>Friend List</h4>
+            <form class="d-flex mt-3" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search Friend" aria-label="Search">
+                <button class="btn btn-warning" type="submit">Search</button>
+            </form>
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <% for(u of all_users){ %>
+                    <li class="nav-item">
+                        <img id="friendImg" src="<%= u.avatar %>">
+                        <a class="nav-link active" aria-current="page" href="/users/profile/<%= u.id %>">
+                            <%= u.name %>
+                        </a>
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
     </section>
     <%- include('_chat_box') %>
 </div>
