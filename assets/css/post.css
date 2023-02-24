@@ -1,0 +1,22 @@
+.h7 {
+  font-size: 0.8rem; }
+
+.gedf-wrapper {
+  margin-top: 0.97rem; }
+
+.card-image {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+@media (min-width: 992px) {
+  .gedf-main {
+    padding-left: 10rem;
+    padding-right: 10rem; }
+  .gedf-card {
+    margin-bottom: 2.77rem; } }
+
+/**Reset Bootstrap*/
+.dropdown-toggle::after {
+  content: none;
+  display: none; }

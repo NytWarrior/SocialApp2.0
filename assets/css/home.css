@@ -12,6 +12,16 @@ body {
   #home-container #feed-posts {
     width: 75%;
     padding: 10px; }
+    #home-container #feed-posts #postForm {
+      width: 74%;
+      padding: 9px;
+      margin: 0px 10% 3% 13%;
+      background-color: white; }
+      #home-container #feed-posts #postForm #postBtn {
+        color: black;
+        background-color: #FFC312;
+        width: 100px;
+        float: right; }
   #home-container #user-friends {
     width: 25%;
     padding: 10px;
