@@ -42,13 +42,12 @@
                 <%= post.content %>
             </p>
 
-
-            <p class="card-image">
+            <p class=" card-image">
                 <% if(post.image){ %>
                     <img class="img-fluid" src="<%= post.image %>" alt="alt-post-image" loading="lazy" />
                     <% } %>
                         <% if(post.video){ %>
-                            <video src="<%= post.video %>" alt="alt-post-video" controls>
+                            <video class="img-fluid" src="<%= post.video %>" alt="alt-post-video" controls>
                                 <% } %>
             </p>
         </div>
@@ -94,10 +93,7 @@
                         </div>
                     </div>
                 </section>
-                <!-- comment card ends -->
-
             </div>
         </div>
     </div>
-    <!-- ========================================================================== -->
 </div>
