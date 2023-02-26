@@ -1,4 +1,4 @@
-<div class="card p-2 mt-3" id="comment-<%= comment._id %>">
+<div class="card p-2 mt-3" id="comment-<%= comment._id %>" style="background-color: #181818;">
     <!-- comment header -->
     <div class="d-flex">
         <div class="">
@@ -37,16 +37,15 @@
     </div>
     <!-- comment header -->
     <!-- comment body -->
-    <div class="card-body p-0">
+    <div class="card-body p-0" style="background-color: #181818;">
         <p class="card-text h7 mb-1">
             <%= comment.content %>
         </p>
-        <% if (locals.user){ %>
-            <a class="card-link small toggle-like-button" href="/likes/toggle/?id=<%=comment._id%>&type=Comment"
-                data-likes="<%= comment.likes.length %>">
-                <i class="far fa-thumbs-up"></i>
-                <%= comment.likes.length %>Like
-            </a>
-            <% } %>
+        <a class="card-link small toggle-like-button" href="/likes/toggle/?id=<%=comment._id%>&type=Comment"
+            data-likes="<%= comment.likes.length %>">
+            <i class="far fa-thumbs-up"></i>
+            <%= comment.likes.length %>Like
+        </a>
+
     </div>
 </div>

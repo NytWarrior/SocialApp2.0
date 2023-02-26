@@ -4,27 +4,28 @@
 <div class="" id="home-container">
     <section id="feed-posts">
         <!-- <h4>Posts</h4> -->
-        <div class="card gedf-card" id="postForm">
+        <div class="card gedf-card" id="postForm" data-bs-theme="dark">
             <% if(locals.user){ %>
                 <form action="/posts/create" id="new-post-form" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
-                        <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"
-                            placeholder="Something about the post..." required></textarea>
+                        <textarea class="form-control" name="content" id="exampleFormControlTextarea1"
+                            style="background-color: #181818" rows="3" placeholder="Something about the post..."
+                            required></textarea>
                     </div>
 
                     <!-- <textarea name="content" cols="30" rows="3" placeholder="Type Here..." required></textarea> -->
                     <div class="upload" style="display: flex;">
                         <div class="mb-3" style="padding-right: 5px;">
                             <label for="formFile" class="form-label">Upload Image</label>
-                            <input class="form-control" type="file" id="formFile" name="image"
-                                accept="image/png, image/gif, image/jpeg, image/jpg" size="1">
+                            <input class="form-control" style="background-color: #181818" type="file" id="formFile"
+                                name="image" accept="image/png, image/gif, image/jpeg, image/jpg" size="1">
                             <!-- <button>Add Image</button> -->
                         </div>
                         <!-- <input type="file" name="image" accept="image/png, image/gif, image/jpeg, image/jpg" size="1" /> -->
                         <div class="mb-3" style="padding-right: 5px;">
                             <label for=" formFile" class="form-label">Upload Video</label>
-                            <input class="form-control" type="file" id="formFile" name="video"
-                                accept="video/mp4, video/webm, video/ogg, video/mkv" size="1">
+                            <input class="form-control" style="background-color: #181818" type="file" id="formFile"
+                                name="video" accept="video/mp4, video/webm, video/ogg, video/mkv" size="1">
                             <!-- <button>Add Video</button> -->
                         </div>
                     </div>
